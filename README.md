@@ -5,7 +5,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>CANTOKKI — 캔냥 공식 페이지</title>
-  <meta name="description" content="재활용에서 태어난 긍정의 아이콘, CANTOKKI(캔토끼) — 세계관, 캐릭터, 굿즈와 제안/문의 안내." />
+  <meta name="description" content="재활용에서 태어난 긍정의 아이콘, CANTOKKI(캔냥이) — 세계관, 캐릭터, 굿즈와 제안/문의 안내." />
   <meta property="og:title" content="CANTOKKI — 캔토끼" />
   <meta property="og:description" content="재활용에서 태어난 긍정의 아이콘, CANTOKKI(캔토끼)." />
   <meta property="og:type" content="website" />
