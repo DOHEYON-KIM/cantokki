@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>CANTOKKI — 캔냥 공식 페이지</title>
+  <title>CANTOKKI — 캔토끼 공식 페이지</title>
   <meta name="description" content="재활용에서 태어난 긍정의 아이콘, CANTOKKI(캔냥이) — 세계관, 캐릭터, 굿즈와 제안/문의 안내." />
   <meta property="og:title" content="CANTOKKI — 캔토끼" />
   <meta property="og:description" content="재활용에서 태어난 긍정의 아이콘, CANTOKKI(캔토끼)." />
@@ -139,7 +139,7 @@
     <section id="world">
       <div class="container">
         <h2>세계관 — CANDLEZ WORLD</h2>
-        <p class="lead">파괴된 지구를 다시 밝히는 작은 불씨들, CANTOKKI와 친구들(캔냥이, 캔멍이, 캔봇…).
+        <p class="lead">파괴된 지구를 다시 밝히는 작은 불씨들, CANTOKKI와 친구들(캔냥이, 캔멍이, 캔봇, 캔토끼…).
           긍정과 협력으로 세상을 수리합니다.</p>
         <div class="gallery" aria-label="샘플 아트워크">
           <div class="frame">아트워크 1</div>
