@@ -1,105 +1,388 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>CANTOKKI — 캔토끼 공식 홈페이지</title>
-  <meta name="description" content="재활용에서 태어난 희망의 아이콘, CANTOKKI(캔토끼) 공식 프로젝트 페이지" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CANTOKKI — 캔토끼 공식 소개</title>
+  <meta name="description" content="재활용에서 태어난 긍정의 아이콘, CANTOKKI(캔토끼) 공식 소개 페이지. 환경·희망·협력의 메시지를 담은 애니메이션 IP와 DCF 세계관을 만나보세요." />
+  <meta name="keywords" content="캔토끼,CANTOKKI,애니메이션,캐릭터IP,환경,업사이클링,DCF,드럼캔파이터" />
+  <meta property="og:title" content="CANTOKKI — 캔토끼 공식 소개" />
+  <meta property="og:description" content="환경·희망·협력의 메시지를 담은 애니메이션 IP CANTOKKI" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="images/og-cantokki.png" />
+  <meta property="og:locale" content="ko_KR" />
+  <link rel="icon" href="images/favicon.png" />
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet">
   <style>
-    body {font-family: 'Noto Sans KR', sans-serif; margin:0; background:linear-gradient(to bottom, #fff, #f9fafb); color:#111;}
-    header {position:sticky; top:0; background:rgba(255,255,255,0.8); backdrop-filter:blur(6px); border-bottom:1px solid #eee; display:flex; justify-content:space-between; align-items:center; padding:10px 20px;}
-    header img {height:40px;}
-    nav a {margin:0 10px; text-decoration:none; color:#333; font-weight:500;}
-    section {max-width:1000px; margin:60px auto; padding:0 20px;}
-    h1,h2 {font-weight:700; color:#111;}
-    h1 {font-size:2rem;}
-    h2 {font-size:1.5rem; margin-bottom:10px;}
-    .grid {display:grid; gap:20px;}
-    .grid-2 {grid-template-columns:repeat(auto-fit,minmax(300px,1fr));}
-    .card {border:1px solid #eee; border-radius:16px; padding:20px; background:#fff; box-shadow:0 1px 3px rgba(0,0,0,0.05);}
-    footer {text-align:center; padding:30px; font-size:0.9rem; color:#666; border-top:1px solid #eee;}
-    .hero {display:flex; flex-direction:column; align-items:center; text-align:center; padding:80px 20px;}
-    .hero img {height:160px; margin-bottom:20px;}
-    .pill {display:inline-block; border:1px solid #ccc; border-radius:50px; padding:3px 10px; font-size:0.8rem; margin-right:4px;}
+    :root { --brand:#ff2d55; --ink:#0f172a; --soft:#f8fafc; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Noto Sans KR', system-ui, -apple-system, Segoe UI, Roboto, "Apple SD Gothic Neo", sans-serif; color: var(--ink); }
+    .glass { backdrop-filter: blur(10px); background: rgba(255,255,255,0.6); }
+    .brand-grad { background: linear-gradient(135deg, #ff2d55 0%, #ff7a2d 50%, #ffc12d 100%); }
   </style>
 </head>
-<body>
-  <header>
-    <div style="display:flex;align-items:center;gap:10px;">
-      <img src="images/cantokki.png" alt="CANTOKKI Logo" />
-      <strong>CANTOKKI</strong>
+<body class="bg-white">
+  <!-- Header -->
+  <header class="fixed top-0 inset-x-0 z-50">
+    <div class="glass border-b border-slate-200">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
+        <a href="#home" class="flex items-center gap-3">
+          <img src="images/cantokki-logo.png" alt="CANTOKKI 로고" class="h-8 w-8 object-contain" onerror="this.style.display='none'"/>
+          <span class="font-extrabold tracking-tight text-xl">CANTOKKI</span>
+        </a>
+        <nav class="hidden md:flex items-center gap-6 text-sm font-medium">
+          <a href="#about" class="hover:text-[var(--brand)]">기획 의도</a>
+          <a href="#characters" class="hover:text-[var(--brand)]">캐릭터</a>
+          <a href="#world" class="hover:text-[var(--brand)]">세계관</a>
+          <a href="#episodes" class="hover:text-[var(--brand)]">에피소드</a>
+          <a href="#target" class="hover:text-[var(--brand)]">타겟/USP</a>
+          <a href="#plan" class="hover:text-[var(--brand)]">확장 계획</a>
+          <a href="#ip" class="hover:text-[var(--brand)]">IP</a>
+          <a href="#gallery" class="hover:text-[var(--brand)]">갤러리</a>
+          <a href="#contact" class="hover:text-[var(--brand)]">문의</a>
+        </nav>
+        <a href="#contact" class="hidden md:inline-flex items-center gap-2 px-4 py-2 rounded-2xl bg-[var(--ink)] text-white hover:opacity-90">
+          <span>제휴/투자 문의</span>
+        </a>
+        <button id="menuBtn" class="md:hidden p-2 rounded-lg hover:bg-slate-100" aria-label="메뉴 열기">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+      </div>
+      <div id="mobileNav" class="md:hidden hidden border-t border-slate-200 bg-white">
+        <div class="px-4 py-3 grid gap-2 text-sm">
+          <a href="#about" class="py-2">기획 의도</a>
+          <a href="#characters" class="py-2">캐릭터</a>
+          <a href="#world" class="py-2">세계관</a>
+          <a href="#episodes" class="py-2">에피소드</a>
+          <a href="#target" class="py-2">타겟/USP</a>
+          <a href="#plan" class="py-2">확장 계획</a>
+          <a href="#ip" class="py-2">IP</a>
+          <a href="#gallery" class="py-2">갤러리</a>
+          <a href="#contact" class="py-2">문의</a>
+        </div>
+      </div>
     </div>
-    <nav>
-      <a href="#about">소개</a>
-      <a href="#characters">캐릭터</a>
-      <a href="#world">세계관</a>
-      <a href="#episodes">시즌1</a>
-      <a href="#expansion">확장</a>
-      <a href="#contact">문의</a>
-    </nav>
   </header>
 
-  <div class="hero">
-    <img src="images/cantokki.png" alt="CANTOKKI Logo" />
-    <h1>재활용에서 태어난 <span style="color:#f44;">희망의 아이콘</span></h1>
-    <p style="max-width:600px;color:#555;">CANTOKKI(캔토끼)는 CAN(깡통)과 TOKKI(토끼)의 결합으로 탄생한 창의적인 캐릭터 IP입니다. 환경 보호와 희망의 메시지를 전하는 모험이 지금 시작됩니다.</p>
-  </div>
-
-  <section id="about">
-    <h2>기획 의도 (Planning Intent)</h2>
-    <p>파괴된 지구를 회복하려는 CANTOKKI의 여정은 인간·환경·우정이라는 보편적 가치를 담고 있습니다. 다양한 부캐(DCF 마스코트)와 액션 요소를 통해 엔터테인먼트 확장성을 확보했습니다.</p>
-  </section>
-
-  <section id="characters">
-    <h2>주요 캐릭터 (Main Characters)</h2>
-    <div class="grid grid-2">
-      <div class="card"><strong>CANTOKKI</strong><br/>두 개의 CAN(깡통)이 결합된 귀여운 토끼 얼굴. 뚜껑은 토끼의 귀를, 동그란 두 눈과 'V'자 모양의 붉은 두 줄의 수염, 귀 안쪽의 붉은 색상이 포인트. 따뜻하고 긍정적이며 유쾌한 리더.</div>
-      <div class="card"><strong>CAN고양이</strong><br/>재활용 캔으로 만든 고양이. 새침하고 날렵하며 재치 있는 파트너.</div>
-      <div class="card"><strong>CAN강아지</strong><br/>드럼캔 몸체의 강아지. 단순하지만 강하고 믿음직한 동료.</div>
-      <div class="card"><strong>CAN로봇</strong><br/>기계 장치와 캔을 결합한 로봇. 이성적·분석적이지만 가끔 엉뚱함.</div>
+  <!-- Hero -->
+  <section id="home" class="pt-28 sm:pt-32">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-10 items-center">
+      <div>
+        <h1 class="text-4xl sm:text-5xl font-extrabold leading-tight">
+          재활용에서 태어난 <span class="text-[var(--brand)]">희망의 아이콘</span>,<br />
+          <span class="underline decoration-[var(--brand)] decoration-4 underline-offset-4">CANTOKKI</span>
+        </h1>
+        <p class="mt-6 text-slate-700 text-lg leading-relaxed">
+          CAN(깡통)과 TOKKI(토끼)가 만나 탄생한 창의적 IP. 환경·희망·협력의 메시지를 담아 전 세대가 공감하는 스토리와
+          다양한 부캐(DCF) 액션 요소로 확장되는 멀티 유니버스입니다.
+        </p>
+        <div class="mt-8 flex flex-wrap gap-3">
+          <a href="#about" class="px-5 py-3 rounded-2xl bg-[var(--brand)] text-white font-semibold hover:opacity-90">기획 의도 보기</a>
+          <a href="#gallery" class="px-5 py-3 rounded-2xl border border-slate-300 hover:bg-slate-50 font-semibold">이미지 보기</a>
+        </div>
+        <p class="mt-6 font-bold text-slate-900">“CANTOKKI 할 수 있어!!!”</p>
+      </div>
+      <div class="relative">
+        <div class="rounded-3xl border border-slate-200 p-4 bg-white shadow-sm">
+          <img src="images/hero-cantokki.png" alt="캔토끼 히어로 아트" class="w-full h-auto object-contain" onerror="this.src='images/placeholder-hero.png'" />
+        </div>
+      </div>
     </div>
   </section>
 
-  <section id="world">
-    <h2>세계관 (Worldview)</h2>
-    <div class="grid grid-2">
-      <div class="card"><strong>배경</strong><br/>인간의 탐욕으로 파괴된 지구. CANTOKKI는 희망을 되찾기 위한 여정을 시작합니다.</div>
-      <div class="card"><strong>탄생</strong><br/>마지막 세대의 인간이 버려진 CAN(깡통)을 모아 토끼 형상을 만들고, CANTOKKI(캔토끼)란 이름을 지어주고, 생명을 불어넣어 준다.</div>
-      <div class="card"><strong>전개 & 목표</strong><br/>CANDLEZ WORLD를 만들고, 지구 회복을 위협하는 세력에 맞서며 인간이 돌아올 것을 믿습니다.</div>
+  <!-- About -->
+  <section id="about" class="py-20 bg-[var(--soft)]">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-black">1. 기획 의도</h2>
+      <p class="mt-4 text-slate-700 leading-relaxed">
+        CANTOKKI(캔토끼)는 재활용 소재인 CAN(깡통)과 귀여운 TOKKI(토끼) 캐릭터를 결합한 창의적 IP입니다. 환경 보호와 희망 메시지를 중심으로 감동과 유머를 동시에 전달하며,
+        DCF(DrumCan Fighter) 등 부캐·액션 요소를 통해 강력한 엔터테인먼트 확장성을 확보합니다.
+      </p>
+      <div class="mt-6 grid md:grid-cols-3 gap-4">
+        <div class="p-5 rounded-2xl bg-white border border-slate-200">
+          <h3 class="font-bold">키 메시지</h3>
+          <p class="mt-2 text-sm text-slate-600">환경 보호 · 희망 · 협력</p>
+        </div>
+        <div class="p-5 rounded-2xl bg-white border border-slate-200">
+          <h3 class="font-bold">타이틀</h3>
+          <p class="mt-2 text-sm text-slate-600">CANTOKKI (캔토끼) — CAN + TOKKI</p>
+        </div>
+        <div class="p-5 rounded-2xl bg-white border border-slate-200">
+          <h3 class="font-bold">슬로건</h3>
+          <p class="mt-2 text-sm text-slate-600">“너는 할 수 있어! (You can do it)”</p>
+        </div>
+      </div>
     </div>
   </section>
 
-  <section id="episodes">
-    <h2>에피소드 구성 (Season 1)</h2>
-    <div class="grid grid-2">
-      <div class="card"><strong>포맷</strong><br/>러닝타임 11분 × 26화. 각 화 독립 스토리 + 시즌 아크 연결.</div>
-      <div class="card"><strong>장르 & 메시지</strong><br/>모험·코미디·드라마·액션. 핵심 메시지: 환경 보호, 희망, 협력.</div>
-      <div class="card"><strong>타깃</strong><br/>주 타깃 6–12세, 서브 타깃 가족 시청자 및 친환경 굿즈 소비층.</div>
+  <!-- Characters -->
+  <section id="characters" class="py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-black">3. 주요 캐릭터</h2>
+      <div class="mt-8 grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <!-- CANTOKKI -->
+        <div class="rounded-3xl border border-slate-200 p-5">
+          <img src="images/char-cantokki.png" alt="CANTOKKI" class="w-full h-40 object-contain" onerror="this.src='images/placeholder.png'" />
+          <h3 class="mt-4 font-extrabold">CANTOKKI</h3>
+          <p class="mt-1 text-sm text-slate-600">리더 · 긍정적 · 유쾌 · 인간에 대한 그리움</p>
+          <ul class="mt-3 text-sm list-disc pl-5 text-slate-700">
+            <li>깡통 얼굴, 뚜껑 귀, V자 붉은 수염</li>
+            <li>DCF 마스코트 부캐</li>
+          </ul>
+        </div>
+        <!-- CANNYANG -->
+        <div class="rounded-3xl border border-slate-200 p-5">
+          <img src="images/char-cannyang.png" alt="CANNYANG" class="w-full h-40 object-contain" onerror="this.src='images/placeholder.png'" />
+          <h3 class="mt-4 font-extrabold">CANNYANG</h3>
+          <p class="mt-1 text-sm text-slate-600">새침 · 날렵 · 재치 · 정보수집 담당</p>
+        </div>
+        <!-- CANMUNG -->
+        <div class="rounded-3xl border border-slate-200 p-5">
+          <img src="images/char-canmung.png" alt="CANMUNG" class="w-full h-40 object-contain" onerror="this.src='images/placeholder.png'" />
+          <h3 class="mt-4 font-extrabold">CANMUNG</h3>
+          <p class="mt-1 text-sm text-slate-600">충직 · 강인 · 방어/전투 담당</p>
+        </div>
+        <!-- CANBOT -->
+        <div class="rounded-3xl border border-slate-200 p-5">
+          <img src="images/char-canbot.png" alt="CANBOT" class="w-full h-40 object-contain" onerror="this.src='images/placeholder.png'" />
+          <h3 class="mt-4 font-extrabold">CANBOT</h3>
+          <p class="mt-1 text-sm text-slate-600">이성적 · 분석적 · 도구 내장</p>
+        </div>
+      </div>
     </div>
   </section>
 
-  <section id="expansion">
-    <h2>확장 계획 (Expansion Plan)</h2>
-    <div class="grid grid-2">
-      <div class="card"><strong>애니메이션</strong><br/>TV, OTT, 유튜브 시리즈</div>
-      <div class="card"><strong>출판</strong><br/>그림책, 학습만화</div>
-      <div class="card"><strong>게임</strong><br/>모바일 어드벤처/퍼즐</div>
-      <div class="card"><strong>굿즈</strong><br/>봉제인형, 피규어, 의류, 친환경 용품</div>
-      <div class="card"><strong>콜라보</strong><br/>친환경 캠페인, 캐릭터 카페</div>
-      <div class="card"><strong>스포츠(DCF)</strong><br/>유튜브·숏츠 노출 및 이벤트</div>
+  <!-- Worldview -->
+  <section id="world" class="py-20 bg-[var(--soft)]">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-black">4. 세계관</h2>
+      <div class="mt-6 grid lg:grid-cols-3 gap-6">
+        <div class="rounded-3xl border border-slate-200 bg-white p-6">
+          <h3 class="font-bold">배경</h3>
+          <p class="mt-2 text-slate-700 text-sm">인간의 탐욕과 개발로 파괴된 지구. 생존이 어려워진 시대.</p>
+        </div>
+        <div class="rounded-3xl border border-slate-200 bg-white p-6">
+          <h3 class="font-bold">탄생</h3>
+          <p class="mt-2 text-slate-700 text-sm">마지막 인간이 깡통으로 만든 토끼 형상에 생명을 불어넣어 CANTOKKI 탄생.</p>
+        </div>
+        <div class="rounded-3xl border border-slate-200 bg-white p-6">
+          <h3 class="font-bold">전개 & 결말</h3>
+          <p class="mt-2 text-slate-700 text-sm">인간과의 교감 후 홀로 남아 캔들즈를 만들고, 지구 회복을 믿으며 모험을 시작.</p>
+        </div>
+      </div>
     </div>
   </section>
 
-  <section id="contact">
-    <h2>제안·문의 (Contact)</h2>
-    <div class="grid grid-2">
-      <div class="card"><strong>파트너십 / 투자 제안</strong><br/>공동 제작, 배급, 라이선싱 및 콜라보 제안 환영합니다.</div>
-      <div class="card"><strong>연락처</strong><br/>김도현 · 010-5483-5882 · <a href="mailto:icantokki@gmail.com">icantokki@gmail.com</a></div>
+  <!-- Episodes -->
+  <section id="episodes" class="py-20">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-black">5. 에피소드 구조</h2>
+      <div class="mt-6 grid md:grid-cols-3 gap-4">
+        <div class="p-6 rounded-2xl border border-slate-200">
+          <p class="text-sm text-slate-600">포맷</p>
+          <p class="font-bold">11분 × 26화 (시즌 1)</p>
+        </div>
+        <div class="p-6 rounded-2xl border border-slate-200">
+          <p class="text-sm text-slate-600">장르</p>
+          <p class="font-bold">모험 · 코미디 · 드라마 · 액션</p>
+        </div>
+        <div class="p-6 rounded-2xl border border-slate-200">
+          <p class="text-sm text-slate-600">형식·메시지</p>
+          <p class="font-bold">단편+시즌 서사 · 환경/희망/협력</p>
+        </div>
+      </div>
     </div>
   </section>
 
-  <footer>
-    © 2025 CANTOKKI 캔토끼 — “할 수 있어!”
+  <!-- Target & USP -->
+  <section id="target" class="py-20 bg-[var(--soft)]">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-black">6–7. 타겟 & 경쟁력(USP)</h2>
+      <div class="mt-8 grid lg:grid-cols-2 gap-8">
+        <div class="rounded-3xl border border-slate-200 bg-white p-6">
+          <h3 class="font-bold">타겟</h3>
+          <ul class="mt-3 list-disc pl-5 text-slate-700 text-sm">
+            <li>주 타겟: 6–12세 어린이</li>
+            <li>서브: 가족 시청자, 친환경·캐릭터 굿즈 소비층</li>
+          </ul>
+        </div>
+        <div class="rounded-3xl border border-slate-200 bg-white p-6">
+          <h3 class="font-bold">USP</h3>
+          <ul class="mt-3 list-disc pl-5 text-slate-700 text-sm">
+            <li>환경·재활용 메시지와 감성 스토리</li>
+            <li>귀여움 + 액션 + 모험의 균형</li>
+            <li>애니·웹툰·게임·굿즈 멀티 확장성</li>
+            <li>글로벌 확장에 용이한 심플 디자인</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Expansion Plan -->
+  <section id="plan" class="py-20">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-black">8. 확장 계획</h2>
+      <div class="mt-6 grid md:grid-cols-3 gap-6">
+        <div class="p-6 rounded-2xl border border-slate-200">
+          <h3 class="font-bold">콘텐츠</h3>
+          <p class="mt-2 text-sm text-slate-700">TV/OTT/유튜브 시리즈, 출판(그림책/학습만화), 모바일 게임</p>
+        </div>
+        <div class="p-6 rounded-2xl border border-slate-200">
+          <h3 class="font-bold">라이선스</h3>
+          <p class="mt-2 text-sm text-slate-700">봉제·피규어·의류·친환경 생활용품, 캐릭터 카페/캠페인</p>
+        </div>
+        <div class="p-6 rounded-2xl border border-slate-200">
+          <h3 class="font-bold">DCF 노출</h3>
+          <p class="mt-2 text-sm text-slate-700">스포츠 이벤트(DCF) 기반 숏폼/팬덤 확장</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- IP -->
+  <section id="ip" class="py-20 bg-[var(--soft)]">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-black">9. 지식재산권 (IP)</h2>
+      <div class="mt-8 grid lg:grid-cols-2 gap-6">
+        <div class="rounded-3xl border border-slate-200 bg-white p-6">
+          <h3 class="font-bold">① CANTOKKI(캔토끼)</h3>
+          <ul class="mt-3 list-disc pl-5 text-sm text-slate-700">
+            <li>저작권등록: C-2025-030311호 (등록일 2025-08-07)</li>
+            <li>상표출원: 40-2025-0149306 (제09류, 2025-08-14)</li>
+            <li>상표출원: 40-2025-0148170 (제25류, 2025-08-12)</li>
+          </ul>
+        </div>
+        <div class="rounded-3xl border border-slate-200 bg-white p-6">
+          <h3 class="font-bold">② DCF (DrumCan Fighter)</h3>
+          <ul class="mt-3 list-disc pl-5 text-sm text-slate-700">
+            <li>특허출원: 10-2024-0173330 (드럼통 배틀 경기장, 2024-11-28)</li>
+            <li>상표출원: 40-2025-0082018 (제09류, 2025-05-14)</li>
+            <li>상표출원: 40-2025-0082019 (제38류, 2025-05-14)</li>
+            <li>상표출원: 40-2025-0082020 (제41류, 2025-05-14)</li>
+          </ul>
+        </div>
+      </div>
+      <p class="mt-4 text-xs text-slate-500">※ 본 페이지의 일부 이미지는 가상 시각화용 플레이스홀더입니다.</p>
+    </div>
+  </section>
+
+  <!-- Gallery -->
+  <section id="gallery" class="py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-black">10–11. 비주얼 & 굿즈 갤러리</h2>
+      <p class="mt-3 text-slate-700">스케치, 메인 키아트, 굿즈 시뮬레이션(머그컵·의류·피규어 등)을 확인하세요.</p>
+      <div class="mt-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <figure class="rounded-3xl overflow-hidden border border-slate-200 bg-white">
+          <img src="images/sketch-1.png" alt="CANTOKKI 스케치" class="w-full h-56 object-cover" onerror="this.src='images/placeholder-wide.png'">
+          <figcaption class="p-3 text-sm text-slate-600">스케치 01</figcaption>
+        </figure>
+        <figure class="rounded-3xl overflow-hidden border border-slate-200 bg-white">
+          <img src="images/goods-mug.png" alt="머그컵 목업" class="w-full h-56 object-cover" onerror="this.src='images/placeholder-wide.png'">
+          <figcaption class="p-3 text-sm text-slate-600">가상 굿즈 — 머그컵</figcaption>
+        </figure>
+        <figure class="rounded-3xl overflow-hidden border border-slate-200 bg-white">
+          <img src="images/goods-tshirt.png" alt="티셔츠 목업" class="w-full h-56 object-cover" onerror="this.src='images/placeholder-wide.png'">
+          <figcaption class="p-3 text-sm text-slate-600">가상 굿즈 — 티셔츠</figcaption>
+        </figure>
+        <figure class="rounded-3xl overflow-hidden border border-slate-200 bg-white">
+          <img src="images/goods-figure.png" alt="피규어 목업" class="w-full h-56 object-cover" onerror="this.src='images/placeholder-wide.png'">
+          <figcaption class="p-3 text-sm text-slate-600">가상 굿즈 — 피규어</figcaption>
+        </figure>
+        <figure class="rounded-3xl overflow-hidden border border-slate-200 bg-white">
+          <img src="images/poster-keyart.png" alt="키아트 포스터" class="w-full h-56 object-cover" onerror="this.src='images/placeholder-wide.png'">
+          <figcaption class="p-3 text-sm text-slate-600">메인 키아트</figcaption>
+        </figure>
+        <figure class="rounded-3xl overflow-hidden border border-slate-200 bg-white">
+          <img src="images/shorts-thumb.png" alt="숏츠 썸네일" class="w-full h-56 object-cover" onerror="this.src='images/placeholder-wide.png'">
+          <figcaption class="p-3 text-sm text-slate-600">DCF 숏폼 콘텐츠</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="py-20 bg-[var(--soft)]">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="brand-grad rounded-3xl p-1">
+        <div class="rounded-3xl bg-white p-8">
+          <h2 class="text-3xl font-black">제휴·투자·공동제작 문의</h2>
+          <p class="mt-3 text-slate-700">파트너십, 배급, 라이선싱 및 공동 제작 논의 환영합니다.</p>
+          <div class="mt-6 grid sm:grid-cols-2 gap-6">
+            <div class="rounded-2xl border border-slate-200 p-5">
+              <p class="text-sm text-slate-500">담당</p>
+              <p class="font-bold">김도현</p>
+              <p class="mt-1">📞 <a href="tel:010-5483-5882" class="underline">010-5483-5882</a></p>
+              <p>📧 <a href="mailto:pandcom@hanmail.net" class="underline">pandcom@hanmail.net</a></p>
+            </div>
+            <form class="rounded-2xl border border-slate-200 p-5 grid gap-3" onsubmit="event.preventDefault(); alert('메시지가 제출되었습니다. 감사합니다!'); this.reset();">
+              <input required class="w-full border border-slate-300 rounded-xl px-4 py-3" placeholder="이름" />
+              <input required type="email" class="w-full border border-slate-300 rounded-xl px-4 py-3" placeholder="이메일" />
+              <textarea required class="w-full border border-slate-300 rounded-xl px-4 py-3" rows="4" placeholder="문의 내용"></textarea>
+              <button class="px-5 py-3 rounded-2xl bg-[var(--ink)] text-white font-semibold hover:opacity-90">문의 보내기</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-10">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-sm text-slate-500 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <p>© <span id="year"></span> CANTOKKI. All rights reserved.</p>
+      <nav class="flex items-center gap-4">
+        <a href="#about" class="hover:text-[var(--brand)]">소개</a>
+        <a href="#ip" class="hover:text-[var(--brand)]">IP</a>
+        <a href="#contact" class="hover:text-[var(--brand)]">문의</a>
+      </nav>
+    </div>
   </footer>
+
+  <!-- Back to top -->
+  <button id="toTop" class="hidden fixed bottom-6 right-6 p-3 rounded-full shadow-lg border border-slate-200 bg-white" aria-label="맨 위로">
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"/></svg>
+  </button>
+
+  <!-- Scripts -->
+  <script>
+    // Year
+    document.getElementById('year').textContent = new Date().getFullYear();
+    // Mobile menu
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileNav = document.getElementById('mobileNav');
+    menuBtn?.addEventListener('click', () => mobileNav.classList.toggle('hidden'));
+    // Back to top
+    const toTop = document.getElementById('toTop');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 400) toTop.classList.remove('hidden');
+      else toTop.classList.add('hidden');
+    });
+    toTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+  </script>
+
+  <!-- JSON-LD Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CreativeWorkSeries",
+    "name": "CANTOKKI (캔토끼)",
+    "description": "재활용 소재 CAN과 토끼 캐릭터의 결합으로 탄생한 환경·희망·협력 메시지의 애니메이션 IP.",
+    "genre": ["Animation","Adventure","Comedy","Family"],
+    "inLanguage": "ko",
+    "isFamilyFriendly": true,
+    "creator": {
+      "@type": "Person",
+      "name": "김도현",
+      "email": "pandcom@hanmail.net"
+    },
+    "keywords": "CANTOKKI,캔토끼,환경,애니메이션,캐릭터IP,DCF",
+    "url": "https://example.com"
+  }
+  </script>
 </body>
 </html>
