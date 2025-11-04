@@ -365,6 +365,70 @@
     toTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
   </script>
 
+<!-- Structured Data for CANTOKKI -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://example.com/#org",
+      "name": "CANDLEZ STUDIO",
+      "url": "https://example.com",
+      "logo": "https://example.com/images/logo-candlez.png",
+      "sameAs": [
+        "https://instagram.com/cantokki",
+        "https://www.youtube.com/@cantokki",
+        "https://www.linkedin.com/company/candlez"
+      ],
+      "contactPoint": [{
+        "@type": "ContactPoint",
+        "contactType": "customer support",
+        "email": "icantokki@gmail.com",
+        "availableLanguage": ["ko","en"]
+      }]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://example.com/#website",
+      "url": "https://example.com",
+      "name": "CANTOKKI Official",
+      "publisher": { "@id": "https://example.com/#org" },
+      "inLanguage": "ko-KR",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://example.com/search?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    },
+    {
+      "@type": "CreativeWorkSeries",
+      "@id": "https://example.com/#cantokki-series",
+      "name": "CANTOKKI (캔토끼)",
+      "alternateName": "CAN TOKKI",
+      "description": "CANTOKKI(캔토끼)는 재활용 소재 CAN(깡통)과 토끼 캐릭터의 결합으로, 환경 보호와 희망·협력의 메시지를 전하는 애니메이션 IP입니다.",
+      "genre": ["Animation","Adventure","Comedy","Family"],
+      "inLanguage": "ko-KR",
+      "isFamilyFriendly": true,
+      "keywords": "CANTOKKI, 캔토끼, CANDLEZ, DCF, 환경, 애니메이션, 캐릭터IP, 희망, 리사이클",
+      "image": "https://example.com/images/cantokki-poster.png",
+      "url": "https://example.com",
+      "creator": {
+        "@type": "Person",
+        "name": "김도현",
+        "email": "icantokki@gmail.com",
+        "url": "https://example.com/about"
+      },
+      "productionCompany": { "@id": "https://example.com/#org" },
+      "dateCreated": "2024-01-01",
+      "copyrightYear": "2025",
+      "license": "https://creativecommons.org/licenses/by-nc-nd/4.0/"
+    }
+  ]
+}
+</script>
+
+  
   <!-- JSON-LD Schema -->
   <script type="application/ld+json">
   {
