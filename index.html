@@ -310,210 +310,55 @@
 
   <!-- Contact -->
   <section id="contact" class="py-20 bg-[var(--soft)]">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="brand-grad rounded-3xl p-1">
-        <div class="rounded-3xl bg-white p-8">
-          <h2 class="text-3xl font-black">제휴·투자·공동제작 문의</h2>
-          <p class="mt-3 text-slate-700">파트너십, 배급, 라이선싱 및 공동 제작 논의 환영합니다.</p>
-          <div class="mt-6 grid sm:grid-cols-2 gap-6">
-            <div class="rounded-2xl border border-slate-200 p-5">
-              <p class="text-sm text-slate-500">담당</p>
-              <p class="font-bold">김도현</p>
-              <p> <a href="tel:010-5483-5882" class=>010-5483-5882</a></p>
-              <p> <a href="mailto:icantokki@gmail.com" class=>icantokki@gmail.com</a></p>
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="brand-grad rounded-3xl p-1">
+      <div class="rounded-3xl bg-white p-8">
+        <h2 class="text-3xl font-black text-[var(--ink)]">제휴·투자·공동제작 문의</h2>
+        <p class="mt-3 text-slate-700">파트너십, 배급, 라이선싱 및 공동 제작 논의 환영합니다.</p>
+        
+        <div class="mt-6 grid sm:grid-cols-2 gap-6">
+          <div class="rounded-2xl border border-slate-200 p-5 flex flex-col justify-center">
+            <p class="text-sm text-slate-500 mb-1">담당자</p>
+            <p class="text-xl font-bold mb-4">김도현</p>
+            
+            <div class="space-y-2">
+              <a href="tel:010-5483-5882" class="flex items-center gap-2 text-slate-700 hover:text-[var(--ink)] transition-colors">
+                <span class="text-lg">📞</span> 010-5483-5882
+              </a>
+              <a href="mailto:icantokki@gmail.com" class="flex items-center gap-2 text-slate-700 hover:text-[var(--ink)] transition-colors text-sm sm:text-base">
+                <span class="text-lg">📧</span> icantokki@gmail.com
+              </a>
             </div>
-            <form class="rounded-2xl border border-slate-200 p-5 grid gap-3" onsubmit="event.preventDefault(); alert('메시지가 제출되었습니다. 감사합니다!'); this.reset();">
-              <input required class="w-full border border-slate-300 rounded-xl px-4 py-3" placeholder="이름" />
-              <input required type="email" class="w-full border border-slate-300 rounded-xl px-4 py-3" placeholder="이메일" />
-              <textarea required class="w-full border border-slate-300 rounded-xl px-4 py-3" rows="4" placeholder="문의 내용"></textarea>
-              <button class="px-5 py-3 rounded-2xl bg-[var(--ink)] text-white font-semibold hover:opacity-90">문의 보내기</button>
-            </form>
           </div>
+
+          <form 
+            action="https://formspree.io/f/YOUR_FORM_ID" 
+            method="POST"
+            class="rounded-2xl border border-slate-200 p-5 grid gap-3"
+          >
+            <div>
+              <label class="block text-xs text-slate-400 mb-1">성함/업체명</label>
+              <input name="name" required class="w-full border border-slate-300 rounded-xl px-4 py-3 focus:ring-2 focus:ring-[var(--ink)] outline-none" placeholder="홍길동" />
+            </div>
+            
+            <div>
+              <label class="block text-xs text-slate-400 mb-1">답변받을 이메일</label>
+              <input name="email" required type="email" class="w-full border border-slate-300 rounded-xl px-4 py-3 focus:ring-2 focus:ring-[var(--ink)] outline-none" placeholder="example@mail.com" />
+            </div>
+            
+            <div>
+              <label class="block text-xs text-slate-400 mb-1">문의 내용</label>
+              <textarea name="message" required class="w-full border border-slate-300 rounded-xl px-4 py-3 focus:ring-2 focus:ring-[var(--ink)] outline-none" rows="4" placeholder="문의 내용을 입력해 주세요."></textarea>
+            </div>
+
+            <input type="hidden" name="_subject" value="CANTOKKI 홈페이지 새 문의 접수">
+            
+            <button type="submit" class="w-full px-5 py-3 rounded-2xl bg-[var(--ink)] text-white font-semibold hover:bg-opacity-90 transition-all shadow-lg active:scale-95">
+              문의 보내기
+            </button>
+          </form>
         </div>
       </div>
     </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="py-10">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-sm text-slate-500 flex flex-col sm:flex-row items-center justify-between gap-4">
-      <p>© <span id="year"></span> CANTOKKI. All rights reserved.</p>
-      <nav class="flex items-center gap-4">
-        <a href="#about" class="hover:text-[var(--brand)]">소개</a>
-        <a href="#ip" class="hover:text-[var(--brand)]">IP</a>
-        <a href="#contact" class="hover:text-[var(--brand)]">문의</a>
-      </nav>
-    </div>
-  </footer>
-
-  <!-- Back to top -->
-  <button id="toTop" class="hidden fixed bottom-6 right-6 p-3 rounded-full shadow-lg border border-slate-200 bg-white" aria-label="맨 위로">
-    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"/></svg>
-  </button>
-
-  <!-- Scripts -->
-  <script>
-    // Year
-    document.getElementById('year').textContent = new Date().getFullYear();
-    // Mobile menu
-    const menuBtn = document.getElementById('menuBtn');
-    const mobileNav = document.getElementById('mobileNav');
-    menuBtn?.addEventListener('click', () => mobileNav.classList.toggle('hidden'));
-    // Back to top
-    const toTop = document.getElementById('toTop');
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > 400) toTop.classList.remove('hidden');
-      else toTop.classList.add('hidden');
-    });
-    toTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
-  </script>
-
-<!-- Structured Data for CANTOKKI -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "Organization",
-      "@id": "https://example.com/#org",
-      "name": "CANDLEZ STUDIO",
-      "url": "https://example.com",
-      "logo": "https://example.com/images/logo-candlez.png",
-      "sameAs": [
-        "https://instagram.com/cantokki",
-        "https://www.youtube.com/@cantokki",
-        "https://www.linkedin.com/company/candlez"
-      ],
-      "contactPoint": [{
-        "@type": "ContactPoint",
-        "contactType": "customer support",
-        "email": "icantokki@gmail.com",
-        "availableLanguage": ["ko","en"]
-      }]
-    },
-    {
-      "@type": "WebSite",
-      "@id": "https://example.com/#website",
-      "url": "https://example.com",
-      "name": "CANTOKKI Official",
-      "publisher": { "@id": "https://example.com/#org" },
-      "inLanguage": "ko-KR",
-      "potentialAction": {
-        "@type": "SearchAction",
-        "target": "https://example.com/search?q={search_term_string}",
-        "query-input": "required name=search_term_string"
-      }
-    },
-    {
-      "@type": "CreativeWorkSeries",
-      "@id": "https://example.com/#cantokki-series",
-      "name": "CANTOKKI (캔토끼)",
-      "alternateName": "CAN TOKKI",
-      "description": "CANTOKKI(캔토끼)는 재활용 소재 CAN(깡통)과 토끼 캐릭터의 결합으로, 환경 보호와 희망·협력의 메시지를 전하는 애니메이션 IP입니다.",
-      "genre": ["Animation","Adventure","Comedy","Family"],
-      "inLanguage": "ko-KR",
-      "isFamilyFriendly": true,
-      "keywords": "CANTOKKI, 캔토끼, CANDLEZ, DCF, 환경, 애니메이션, 캐릭터IP, 희망, 리사이클",
-      "image": "https://example.com/images/cantokki-poster.png",
-      "url": "https://example.com",
-      "creator": {
-        "@type": "Person",
-        "name": "김도현",
-        "email": "icantokki@gmail.com",
-        "url": "https://example.com/about"
-      },
-      "productionCompany": { "@id": "https://example.com/#org" },
-      "dateCreated": "2024-01-01",
-      "copyrightYear": "2025",
-      "license": "https://creativecommons.org/licenses/by-nc-nd/4.0/"
-    }
-  ]
-}
-</script>
-
-  
-  <!-- JSON-LD Schema -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "CreativeWorkSeries",
-    "name": "CANTOKKI (캔토끼)",
-    "description": "재활용 소재 CAN과 토끼 캐릭터의 결합으로 탄생한 환경·희망·협력 메시지의 애니메이션 IP.",
-    "genre": ["Animation","Adventure","Comedy","Family"],
-    "inLanguage": "ko",
-    "isFamilyFriendly": true,
-    "creator": {
-      "@type": "Person",
-      "name": "김도현",
-      "email": "icantokki@gmail.com"
-    },
-    "keywords": "CANTOKKI,캔토끼,환경,애니메이션,캐릭터IP,DCF",
-    "url": "https://example.com"
-  }
-  </script>
-</body>
-</html>
-
-<!-- Structured Data for CANTOKKI -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "Organization",
-      "@id": "https://example.com/#org",
-      "name": "CANDLEZ STUDIO",
-      "url": "https://example.com",
-      "logo": "https://example.com/images/logo-candlez.png",
-      "sameAs": [
-        "https://instagram.com/cantokki",
-        "https://www.youtube.com/@cantokki",
-        "https://www.linkedin.com/company/candlez"
-      ],
-      "contactPoint": [{
-        "@type": "ContactPoint",
-        "contactType": "customer support",
-        "email": "icantokki@gmail.com",
-        "availableLanguage": ["ko","en"]
-      }]
-    },
-    {
-      "@type": "WebSite",
-      "@id": "https://example.com/#website",
-      "url": "https://example.com",
-      "name": "CANTOKKI Official",
-      "publisher": { "@id": "https://example.com/#org" },
-      "inLanguage": "ko-KR",
-      "potentialAction": {
-        "@type": "SearchAction",
-        "target": "https://example.com/search?q={search_term_string}",
-        "query-input": "required name=search_term_string"
-      }
-    },
-    {
-      "@type": "CreativeWorkSeries",
-      "@id": "https://example.com/#cantokki-series",
-      "name": "CANTOKKI (캔토끼)",
-      "alternateName": "CAN TOKKI",
-      "description": "CANTOKKI(캔토끼)는 재활용 소재 CAN(깡통)과 토끼 캐릭터의 결합으로, 환경 보호와 희망·협력의 메시지를 전하는 애니메이션 IP입니다.",
-      "genre": ["Animation","Adventure","Comedy","Family"],
-      "inLanguage": "ko-KR",
-      "isFamilyFriendly": true,
-      "keywords": "CANTOKKI, 캔토끼, CANDLEZ, DCF, 환경, 애니메이션, 캐릭터IP, 희망, 리사이클",
-      "image": "https://example.com/images/cantokki-poster.png",
-      "url": "https://example.com",
-      "creator": {
-        "@type": "Person",
-        "name": "김도현",
-        "email": "icantokki@gmail.com",
-        "url": "https://example.com/about"
-      },
-      "productionCompany": { "@id": "https://example.com/#org" },
-      "dateCreated": "2024-01-01",
-      "copyrightYear": "2025",
-      "license": "https://creativecommons.org/licenses/by-nc-nd/4.0/"
-    }
-  ]
-}
-</script>
-
+  </div>
+</section>
